@@ -23,9 +23,9 @@ class DemoWebApplicationTests {
 	@Test
 	public void crearUsuarioTest() {
 		Usuario us = new Usuario();
-		us.setId(5);
-		us.setNombre("Rodrigo");
-		us.setClave(encoder.encode("Bena20"));
+		us.setId(3);
+		us.setNombre("María");
+		us.setClave(encoder.encode("Salle20"));
 		Usuario retorno = repo.save(us);
 		
 		assertTrue(retorno.getClave().equalsIgnoreCase(us.getClave()));
