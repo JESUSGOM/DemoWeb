@@ -16,15 +16,18 @@ class DemoWebApplicationTests {
 	@Autowired
 	private IUsuarioRepo repo;
 	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 	
 	
 	@Test
 	public void crearUsuarioTest() {
 		Usuario us = new Usuario();
-		us.setId(4);
-		us.setNombre("Nolito");
-		us.setClave("Bena20");
+		us.setId(5);
+		us.setNombre("Rodrigo");
+		us.setClave(encoder.encode("Bena20"));
 		Usuario retorno = repo.save(us);
+		
 		assertTrue(retorno.getClave().equalsIgnoreCase(us.getClave()));
 	}
 
